@@ -1,0 +1,33 @@
+.container {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(189 189 189 / 40.4%);
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.container > a:hover,
+.signIn:hover {
+  color: #4e4e4ed5;
+  transition: 0.4s ease;
+}
+
+.languages {
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+.languages:hover {
+  transition: 0.4s ease;
+  fill: #4e4e4ed5;
+}
