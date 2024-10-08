@@ -30,6 +30,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -37,12 +38,13 @@
     "eslint-config-next": "14.2.13",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react-compiler": "^0.0.0-experimental-939a02d-20240930",
+    "eslint-plugin-react-compiler": "^0.0.0-experimental-7c1344f-20241007",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "sass": "^1.79.4",
     "stylelint": "^16.9.0",
     "stylelint-config-standard-scss": "^13.1.0",
-    "typescript": "^5.5.0"
+    "typescript": "5.5.3"
   }
 }

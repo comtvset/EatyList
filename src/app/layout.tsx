@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
+import { Header } from '@/components/header/Header';
+import { Quicksand } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const mainFont = Quicksand({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'EatyList',
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={mainFont.className} style={{ fontSize: '1.2rem' }}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
