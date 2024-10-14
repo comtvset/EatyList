@@ -5,7 +5,7 @@ export const schemaSignUp = yup.object().shape({
     .string()
     .required('email is required')
     .email('invalid email address')
-    .matches(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,63}$/, 'invalid email address'),
+    .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/, 'invalid email address'),
   confirmEmail: yup
     .string()
     .required('please confirm email')
@@ -30,7 +30,7 @@ export const schemaSignIn = yup.object().shape({
     .string()
     .required('email is required')
     .email('invalid email address')
-    .matches(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,63}$/, 'invalid email address'),
+    .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/, 'invalid email address'),
   confirmEmail: yup.string().nullable(),
   password: yup
     .string()

@@ -28,6 +28,7 @@ export const Provider: React.FC<ProviderProps> = ({
         height={30}
         style={{ borderRight: border }}
         className={styles.img}
+        priority
       />
       <span className={styles.text}>{text}</span>
     </div>
