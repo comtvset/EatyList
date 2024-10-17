@@ -1,17 +1,14 @@
-.languages {
-  transition: 1s ease;
-  cursor: pointer;
-}
-
-.languages:hover {
-  transition: 0.4s ease;
-  fill: #4e4e4ed5;
-}
-
 .selectContainer select {
   border: none;
   font-size: 1.2rem;
   font-family: inherit;
   outline: none;
   background-color: white;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.selectContainer select:hover {
+  transition: 0.4s ease;
+  color: #4e4e4ed5;
 }

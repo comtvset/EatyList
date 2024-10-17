@@ -1,0 +1,33 @@
+{
+  "HomePage": {
+    "title": "Pagina de bienvenida",
+    "signin": "Inicia sesión",
+    "getStart": "Entrar"
+  },
+
+  "Form": {
+    "titleFormSignIn": "Inicia sesión",
+    "titleFormSignUp": "Regístrate",
+    "email": "Email",
+    "confirmEmail": "Confirma tu email",
+    "password": "Elige una contraseña",
+    "confirmPassword": "Confirma la contraseña",
+    "or": "o",
+    "continueWithGoogle": "Continuar con Google",
+    "continueWithFacebook": "Continuar con Facebook",
+    "continueWithApple": "Continuar con Apple",
+    "err_emailRequired": "el correo electrónico es obligatorio",
+    "err_emailInvalid": "dirección de correo electrónico no válida",
+    "err_emailConfirm": "por favor confirma el correo electrónico",
+    "err_emailMatch": "los correos electrónicos deben coincidir",
+    "err_passwordRequired": "la contraseña es obligatoria",
+    "err_password>8": "la contraseña debe tener al menos 8 caracteres",
+    "err_password<32": "la contraseña no debe superar los 32 caracteres",
+    "err_passwordContainUpper": "la contraseña debe contener al menos una letra mayúscula",
+    "err_passwordContainLower": "la contraseña debe contener al menos una letra minúscula",
+    "err_passwordContainNum": "la contraseña debe contener al menos un número",
+    "err_passwordContainSpecChar": "la contraseña debe contener al menos un carácter especial",
+    "err_passwordConfirm": "por favor confirma la contraseña",
+    "err_passwordMatch": "las contraseñas deben coincidir"
+  }
+}

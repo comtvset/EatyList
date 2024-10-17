@@ -1,45 +1,47 @@
 import * as yup from 'yup';
 
-export const schemaSignUp = yup.object().shape({
-  email: yup
-    .string()
-    .required('email is required')
-    .email('invalid email address')
-    .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/, 'invalid email address'),
-  confirmEmail: yup
-    .string()
-    .required('please confirm email')
-    .oneOf([yup.ref('email')], 'emails must match'),
-  password: yup
-    .string()
-    .required('password is required')
-    .min(8, 'password must be at least 8 characters')
-    .max(32, 'password must be no more than 32 characters')
-    .matches(/[A-Z]/, 'password must contain at least one uppercase letter')
-    .matches(/[a-z]/, 'password must contain at least one lowercase letter')
-    .matches(/\d/, 'password must contain at least one number')
-    .matches(/[@$!%*?&]/, 'password must contain at least one special character'),
-  confirmPassword: yup
-    .string()
-    .required('please confirm password')
-    .oneOf([yup.ref('password')], 'passwords must match'),
-});
+export const schemaSignUp = (t: (key: string) => string) =>
+  yup.object().shape({
+    email: yup
+      .string()
+      .required(t('err_emailRequired'))
+      .email(t('err_emailInvalid'))
+      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/, t('err_emailInvalid')),
+    confirmEmail: yup
+      .string()
+      .required(t('err_emailConfirm'))
+      .oneOf([yup.ref('email')], t('err_emailMatch')),
+    password: yup
+      .string()
+      .required(t('err_passwordRequired'))
+      .min(8, t('err_password>8'))
+      .max(32, t('err_password<32'))
+      .matches(/[A-Z]/, t('err_passwordContainUpper'))
+      .matches(/[a-z]/, t('err_passwordContainLower'))
+      .matches(/\d/, t('err_passwordContainNum'))
+      .matches(/[@$!%*?&]/, t('err_passwordContainSpecChar')),
+    confirmPassword: yup
+      .string()
+      .required(t('err_passwordConfirm'))
+      .oneOf([yup.ref('password')], t('err_passwordMatch')),
+  });
 
-export const schemaSignIn = yup.object().shape({
-  email: yup
-    .string()
-    .required('email is required')
-    .email('invalid email address')
-    .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/, 'invalid email address'),
-  confirmEmail: yup.string().nullable(),
-  password: yup
-    .string()
-    .required('password is required')
-    .min(8, 'password must be at least 8 characters')
-    .max(32, 'password must be no more than 32 characters')
-    .matches(/[A-Z]/, 'password must contain at least one uppercase letter')
-    .matches(/[a-z]/, 'password must contain at least one lowercase letter')
-    .matches(/\d/, 'password must contain at least one number')
-    .matches(/[@$!%*?&]/, 'password must contain at least one special character'),
-  confirmPassword: yup.string().nullable(),
-});
+export const schemaSignIn = (t: (key: string) => string) =>
+  yup.object().shape({
+    email: yup
+      .string()
+      .required(t('err_emailRequired'))
+      .email(t('err_emailInvalid'))
+      .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/, t('err_emailInvalid')),
+    confirmEmail: yup.string().nullable(),
+    password: yup
+      .string()
+      .required(t('err_passwordRequired'))
+      .min(8, t('err_password>8'))
+      .max(32, t('err_password<32'))
+      .matches(/[A-Z]/, t('err_passwordContainUpper'))
+      .matches(/[a-z]/, t('err_passwordContainLower'))
+      .matches(/\d/, t('err_passwordContainNum'))
+      .matches(/[@$!%*?&]/, t('err_passwordContainSpecChar')),
+    confirmPassword: yup.string().nullable(),
+  });

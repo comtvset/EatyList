@@ -5,10 +5,12 @@ import { usePathname } from 'next/navigation';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { schemaSignIn, schemaSignUp } from '@/hooks/schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useTranslations } from 'next-intl';
 
 export const Form: React.FC = () => {
+  const t = useTranslations('Form');
   const pathname = usePathname();
-  const schema = pathname === '/signup' ? schemaSignUp : schemaSignIn;
+  const schema = pathname === '/signup' ? schemaSignUp(t) : schemaSignIn(t);
 
   const {
     register,
@@ -25,7 +27,7 @@ export const Form: React.FC = () => {
     <>
       <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email" className={`${errors.email ? styles.error : ''}`}>
-          Email*
+          {t('email')}*
         </label>
         <input
           {...register('email')}
@@ -38,10 +40,10 @@ export const Form: React.FC = () => {
           </p>
         </div>
 
-        {pathname === '/signup' && schemaSignUp && (
+        {pathname === '/signup' && schemaSignUp(t) && (
           <>
             <label htmlFor="confirmEmail" className={`${errors.confirmEmail ? styles.error : ''}`}>
-              Confirm email*
+              {t('confirmEmail')}*
             </label>
             <input
               {...register('confirmEmail')}
@@ -59,7 +61,7 @@ export const Form: React.FC = () => {
         )}
 
         <label htmlFor="password" className={`${errors.password ? styles.error : ''}`}>
-          Choose a password*
+          {t('password')}*
         </label>
         <input
           {...register('password')}
@@ -81,7 +83,7 @@ export const Form: React.FC = () => {
               htmlFor="confirmPassword"
               className={`${errors.confirmPassword ? styles.error : ''}`}
             >
-              Confirm password*
+              {t('confirmPassword')}*
             </label>
             <input
               {...register('confirmPassword')}
@@ -100,12 +102,12 @@ export const Form: React.FC = () => {
         )}
         {pathname === '/signup' && (
           <>
-            <input type="submit" value={'Sign In'} />
+            <input type="submit" value={t('titleFormSignUp')} />
           </>
         )}
         {pathname === '/signin' && (
           <>
-            <input type="submit" value={'Log In'} />
+            <input type="submit" value={t('titleFormSignIn')} />
           </>
         )}
       </form>

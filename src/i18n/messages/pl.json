@@ -1,0 +1,33 @@
+{
+  "HomePage": {
+    "title": "Strona powitalna",
+    "signin": "Zaloguj się",
+    "getStart": "Zacznij"
+  },
+
+  "Form": {
+    "titleFormSignIn": "Zaloguj się",
+    "titleFormSignUp": "Zarejestruj się",
+    "email": "Email",
+    "confirmEmail": "Potwierdż email",
+    "password": "Wybierz hasło",
+    "confirmPassword": "Potwierdż hasło",
+    "or": "lub",
+    "continueWithGoogle": "Kontynuuj z Google",
+    "continueWithFacebook": "Kontynuuj z Facebook",
+    "continueWithApple": "Kontynuuj z Apple",
+    "err_emailRequired": "email jest wymagany",
+    "err_emailInvalid": "nieprawidłowy adres email",
+    "err_emailConfirm": "proszę potwierdzić email",
+    "err_emailMatch": "adresy email muszą się zgadzać",
+    "err_passwordRequired": "hasło jest wymagane",
+    "err_password>8": "hasło musi mieć co najmniej 8 znaków",
+    "err_password<32": "hasło może mieć maksymalnie 32 znaki",
+    "err_passwordContainUpper": "hasło musi zawierać co najmniej jedną wielką literę",
+    "err_passwordContainLower": "hasło musi zawierać co najmniej jedną małą literę",
+    "err_passwordContainNum": "hasło musi zawierać co najmniej jedną cyfrę",
+    "err_passwordContainSpecChar": "hasło musi zawierać co najmniej jeden znak specjalny",
+    "err_passwordConfirm": "proszę potwierdzić hasło",
+    "err_passwordMatch": "hasła muszą się zgadzać"
+  }
+}
