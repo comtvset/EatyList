@@ -5,7 +5,7 @@ import { Quicksand } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 
-const mainFont = Quicksand({ weight: '400', subsets: ['latin'] });
+const mainFont = Quicksand({ weight: '400', subsets: ['latin'], preload: false });
 
 export const metadata: Metadata = {
   title: 'EatyList',
