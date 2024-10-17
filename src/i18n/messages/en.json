@@ -1,0 +1,32 @@
+{
+  "HomePage": {
+    "title": "Welcome page",
+    "signin": "Sign In",
+    "getStart": "Get Started"
+  },
+  "Form": {
+    "titleFormSignIn": "Sign In",
+    "titleFormSignUp": "Sign Up",
+    "email": "Email",
+    "confirmEmail": "Confirm email",
+    "password": "Choose a password",
+    "confirmPassword": "Confirm password",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithFacebook": "Continue with Facebook",
+    "continueWithApple": "Continue with Apple",
+    "err_emailRequired": "email is required",
+    "err_emailInvalid": "invalid email address",
+    "err_emailConfirm": "please confirm email",
+    "err_emailMatch": "emails must match",
+    "err_passwordRequired": "password is required",
+    "err_password>8": "password must be at least 8 characters",
+    "err_password<32": "password must be no more than 32 characters",
+    "err_passwordContainUpper": "password must contain at least one uppercase letter",
+    "err_passwordContainLower": "password must contain at least one lowercase letter",
+    "err_passwordContainNum": "password must contain at least one number",
+    "err_passwordContainSpecChar": "password must contain at least one special character",
+    "err_passwordConfirm": "please confirm password",
+    "err_passwordMatch": "passwords must match"
+  }
+}

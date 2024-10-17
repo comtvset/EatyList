@@ -3,12 +3,15 @@ import { Form } from '@/components/form/providers/customProvider/Form';
 import { Providers } from '@/components/form/providers/additionalProviders/Providers';
 import Separator from '@/components/form/separator/Separator';
 import { FormHeader } from '@/components/form/formHeader/FormHeader';
+import { useTranslations } from 'next-intl';
 
 export default function SingUp() {
+  const t = useTranslations('Form');
+
   return (
     <main className={styles.main}>
       <div className={styles.container}>
-        <FormHeader header={'Sign Up'} />
+        <FormHeader header={t('titleFormSignUp')} />
         <div className={styles.providersContainer}>
           <Form />
           <Separator />
