@@ -4,7 +4,9 @@ import { Header } from '@/components/header/Header';
 import { Quicksand } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
-
+import { AuthProvider } from '@/contexts/authContext';
+import { cookies } from 'next/headers';
+import { AlertProvider } from '@/contexts/alertContext';
 const mainFont = Quicksand({ weight: '400', subsets: ['latin'], preload: false });
 
 export const metadata: Metadata = {
@@ -26,13 +28,18 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
+  const token = cookies().get('JWT')?.value || null;
 
   return (
     <html lang={locale}>
       <body className={mainFont.className} style={{ fontSize: '1.2rem' }}>
         <NextIntlClientProvider messages={messages}>
-          <Header />
-          {children}
+          <AlertProvider>
+            <AuthProvider initialToken={token}>
+              <Header />
+              {children}
+            </AuthProvider>
+          </AlertProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -2,7 +2,8 @@
   "HomePage": {
     "title": "Welcome page",
     "signin": "Sign In",
-    "getStart": "Get Started"
+    "getStart": "Get Started",
+    "signout": "Sign Out"
   },
   "Form": {
     "titleFormSignIn": "Sign In",
@@ -28,5 +29,20 @@
     "err_passwordContainSpecChar": "password must contain at least one special character",
     "err_passwordConfirm": "please confirm password",
     "err_passwordMatch": "passwords must match"
+  },
+  "MainPage": {
+    "title": "Main Page"
+  },
+  "Errors": {
+    "signout_err": "Error during sign out",
+    "unknown_err": "Unknown error occurred",
+    "auth/email-already-in-use": "This email is already associated with an account.",
+    "auth/too-many-requests": "Too many requests. Please try again later.",
+    "auth/user-disabled": "This user account has been disabled by an administrator.",
+    "auth_success": "Authentication successful",
+    "unknown_err_spec": "Unknown error occurred :(",
+    "unknown_suc_spec": "Hurray! Unknown success :)",
+    "showError": "Show error",
+    "showSuccess": "Show success"
   }
 }

@@ -2,9 +2,9 @@
   "HomePage": {
     "title": "Pagina de bienvenida",
     "signin": "Inicia sesión",
-    "getStart": "Entrar"
+    "getStart": "Entrar",
+    "signout": "Desconectar"
   },
-
   "Form": {
     "titleFormSignIn": "Inicia sesión",
     "titleFormSignUp": "Regístrate",
@@ -29,5 +29,20 @@
     "err_passwordContainSpecChar": "la contraseña debe contener al menos un carácter especial",
     "err_passwordConfirm": "por favor confirma la contraseña",
     "err_passwordMatch": "las contraseñas deben coincidir"
+  },
+  "MainPage": {
+    "title": "Pagina principal"
+  },
+  "Errors": {
+    "signout_err": "Error durante la desconexión",
+    "unknown_err": "Ocurrió un error desconocido",
+    "auth/email-already-in-use": "Este correo electrónico ya está asociado con una cuenta.",
+    "auth/too-many-requests": "Demasiadas solicitudes. Por favor, inténtelo de nuevo más tarde.",
+    "auth/user-disabled": "Esta cuenta de usuario ha sido deshabilitada por un administrador.",
+    "auth_success": "Autenticación exitosa",
+    "unknown_err_spec": "Ocurrió un error desconocido :(",
+    "unknown_suc_spec": "¡Hurra! Éxito desconocido :)",
+    "showError": "Mostrar error",
+    "showSuccess": "Mostrar éxito"
   }
 }

@@ -2,9 +2,9 @@
   "HomePage": {
     "title": "Strona powitalna",
     "signin": "Zaloguj się",
-    "getStart": "Zacznij"
+    "getStart": "Zacznij",
+    "signout": "Wyloguj się"
   },
-
   "Form": {
     "titleFormSignIn": "Zaloguj się",
     "titleFormSignUp": "Zarejestruj się",
@@ -29,5 +29,20 @@
     "err_passwordContainSpecChar": "hasło musi zawierać co najmniej jeden znak specjalny",
     "err_passwordConfirm": "proszę potwierdzić hasło",
     "err_passwordMatch": "hasła muszą się zgadzać"
+  },
+  "MainPage": {
+    "title": "Strona główna"
+  },
+  "Errors": {
+    "signout_err": "Błąd podczas wylogowywania",
+    "unknown_err": "Wystąpił nieznany błąd",
+    "auth/email-already-in-use": "Ten adres e-mail jest już powiązany z kontem.",
+    "auth/too-many-requests": "Zbyt wiele prób. Spróbuj ponownie później.",
+    "auth/user-disabled": "To konto użytkownika zostało dezaktywowane przez administratora.",
+    "auth_success": "Logowanie zakończone sukcesem",
+    "unknown_err_spec": "Wystąpił nieznany błąd :(",
+    "unknown_suc_spec": "Brawo! Nieznany sukces :)",
+    "showError": "Pokaż błąd",
+    "showSuccess": "Pokaż sukces"
   }
 }
