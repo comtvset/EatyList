@@ -15,7 +15,7 @@
     "or": "lub",
     "continueWithGoogle": "Kontynuuj z Google",
     "continueWithFacebook": "Kontynuuj z Facebook",
-    "continueWithApple": "Kontynuuj z Apple",
+    "continueWithGitHub": "Kontynuuj z GitHub",
     "err_emailRequired": "email jest wymagany",
     "err_emailInvalid": "nieprawidłowy adres email",
     "err_emailConfirm": "proszę potwierdzić email",
@@ -36,13 +36,17 @@
   "Errors": {
     "signout_err": "Błąd podczas wylogowywania",
     "unknown_err": "Wystąpił nieznany błąd",
-    "auth/email-already-in-use": "Ten adres e-mail jest już powiązany z kontem.",
-    "auth/too-many-requests": "Zbyt wiele prób. Spróbuj ponownie później.",
-    "auth/user-disabled": "To konto użytkownika zostało dezaktywowane przez administratora.",
+    "auth/email-already-in-use": "Ten adres e-mail jest już powiązany z kontem",
+    "auth/too-many-requests": "Zbyt wiele prób. Spróbuj ponownie później",
+    "auth/user-disabled": "To konto użytkownika zostało dezaktywowane przez administratora",
+    "auth/account-exists-with-different-credential": "Konto już istnieje z inną metodą logowania",
     "auth_success": "Logowanie zakończone sukcesem",
+    "auth/cancelled-popup-request": "Proces logowania został anulowany. Spróbuj ponownie.",
+    "auth/popup-closed-by-user": "Okno logowania zostało zamknięte przed zakończeniem. Spróbuj ponownie.",
     "unknown_err_spec": "Wystąpił nieznany błąd :(",
     "unknown_suc_spec": "Brawo! Nieznany sukces :)",
     "showError": "Pokaż błąd",
-    "showSuccess": "Pokaż sukces"
+    "showSuccess": "Pokaż sukces",
+    "noProvider": "Dostawca nie znaleziony"
   }
 }

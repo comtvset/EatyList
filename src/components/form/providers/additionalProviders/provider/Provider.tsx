@@ -2,7 +2,12 @@
 
 import Image from 'next/image';
 import styles from '@/components/form/providers/additionalProviders/provider/Provider.module.scss';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import {
+  GoogleAuthProvider,
+  FacebookAuthProvider,
+  GithubAuthProvider,
+  signInWithPopup,
+} from 'firebase/auth';
 import { auth } from '@/firebase';
 import { useAuth } from '@/hooks/useAuth';
 import { AlertContext } from '@/contexts/alertContext';
@@ -37,7 +42,24 @@ export const Provider: React.FC<ProviderProps> = ({
 
     setIsLoading(true);
 
-    const provider = new GoogleAuthProvider();
+    let provider;
+
+    if (text.includes('Google')) {
+      provider = new GoogleAuthProvider();
+    }
+    if (text.includes('Facebook')) {
+      provider = new FacebookAuthProvider();
+    }
+    if (text.includes('GitHub')) {
+      provider = new GithubAuthProvider();
+    }
+
+    if (!provider) {
+      catchAlert({ type: 'error', message: t_err('noProvider') });
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
@@ -65,7 +87,27 @@ export const Provider: React.FC<ProviderProps> = ({
       }
     } catch (err) {
       if (err instanceof Error) {
-        catchAlert({ type: 'error', message: err.message });
+        if (err.message === 'Firebase: Error (auth/account-exists-with-different-credential).') {
+          catchAlert({
+            type: 'error',
+            message: t_err('auth/account-exists-with-different-credential'),
+          });
+        } else if (err.message === 'Firebase: Error (auth/cancelled-popup-request).') {
+          catchAlert({
+            type: 'error',
+            message: t_err('auth/cancelled-popup-request'),
+          });
+        } else if (err.message === 'Firebase: Error (auth/popup-closed-by-user).') {
+          catchAlert({
+            type: 'error',
+            message: t_err('auth/popup-closed-by-user'),
+          });
+        } else {
+          catchAlert({
+            type: 'error',
+            message: err.message,
+          });
+        }
       } else {
         catchAlert({ type: 'error', message: t_err('unknown_err') });
       }

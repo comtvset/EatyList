@@ -27,10 +27,10 @@ export const Providers: React.FC = () => {
           borderRight="1px solid #415a9a"
         />
         <Provider
-          src="/apple.png"
-          text={t('continueWithApple')}
-          textColor="black"
-          backgroundColor="#ffffff"
+          src="/github.png"
+          text={t('continueWithGitHub')}
+          textColor="white"
+          backgroundColor="black"
           border="1px solid black"
           borderRight="1px solid black"
         />

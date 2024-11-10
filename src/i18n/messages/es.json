@@ -15,7 +15,7 @@
     "or": "o",
     "continueWithGoogle": "Continuar con Google",
     "continueWithFacebook": "Continuar con Facebook",
-    "continueWithApple": "Continuar con Apple",
+    "continueWithGitHub": "Continuar con GitHub",
     "err_emailRequired": "el correo electrónico es obligatorio",
     "err_emailInvalid": "dirección de correo electrónico no válida",
     "err_emailConfirm": "por favor confirma el correo electrónico",
@@ -36,13 +36,17 @@
   "Errors": {
     "signout_err": "Error durante la desconexión",
     "unknown_err": "Ocurrió un error desconocido",
-    "auth/email-already-in-use": "Este correo electrónico ya está asociado con una cuenta.",
-    "auth/too-many-requests": "Demasiadas solicitudes. Por favor, inténtelo de nuevo más tarde.",
-    "auth/user-disabled": "Esta cuenta de usuario ha sido deshabilitada por un administrador.",
+    "auth/email-already-in-use": "Este correo electrónico ya está asociado con una cuenta",
+    "auth/too-many-requests": "Demasiadas solicitudes. Por favor, inténtelo de nuevo más tarde",
+    "auth/user-disabled": "Esta cuenta de usuario ha sido deshabilitada por un administrador",
+    "auth/account-exists-with-different-credential": "Ya existe una cuenta con un método de inicio de sesión diferente",
     "auth_success": "Autenticación exitosa",
+    "auth/cancelled-popup-request": "El proceso de inicio de sesión fue cancelado. Por favor, inténtalo de nuevo.",
+    "auth/popup-closed-by-user": "El popup de inicio fue cerrado antes de completar el proceso. Intenta nuevamente.",
     "unknown_err_spec": "Ocurrió un error desconocido :(",
     "unknown_suc_spec": "¡Hurra! Éxito desconocido :)",
     "showError": "Mostrar error",
-    "showSuccess": "Mostrar éxito"
+    "showSuccess": "Mostrar éxito",
+    "noProvider": "Proveedor no encontrado"
   }
 }
