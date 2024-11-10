@@ -1,16 +1,24 @@
 'use client';
 
 import styles from '@/components/form/providers/customProvider/Form.module.scss';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 import { schemaSignIn, schemaSignUp } from '@/hooks/schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
+import { useAuth } from '@/hooks/useAuth';
+import { useContext, useEffect } from 'react';
+import { AlertContext } from '@/contexts/alertContext';
 
 export const Form: React.FC = () => {
   const t = useTranslations('Form');
+  const t_err = useTranslations('Errors');
   const pathname = usePathname();
   const schema = pathname === '/signup' ? schemaSignUp(t) : schemaSignIn(t);
+  const router = useRouter();
+
+  const { verify, isAuthenticated } = useAuth();
+  const { catchAlert } = useContext(AlertContext);
 
   const {
     register,
@@ -21,7 +29,33 @@ export const Form: React.FC = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => data;
+  const onSubmit: SubmitHandler<FieldValues> = async (userData) => {
+    try {
+      const response = await fetch('/api/authenticateEmail', {
+        method: 'POST',
+        body: JSON.stringify({ userData, pathname }),
+      });
+      const data = await response.json();
+      verify();
+      if (data.status) {
+        catchAlert({ type: 'successful', message: data.message });
+      } else {
+        catchAlert({ type: 'error', message: data.message });
+      }
+    } catch (err) {
+      if (err instanceof Error) {
+        catchAlert({ type: 'error', message: err.name });
+      } else {
+        catchAlert({ type: 'error', message: t_err('unknown_err') });
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.replace('/main');
+    }
+  }, [isAuthenticated, router]);
 
   return (
     <>
@@ -102,12 +136,12 @@ export const Form: React.FC = () => {
         )}
         {pathname === '/signup' && (
           <>
-            <input type="submit" value={t('titleFormSignUp')} />
+            <input type="submit" className="globalBlueButton" value={t('titleFormSignUp')} />
           </>
         )}
         {pathname === '/signin' && (
           <>
-            <input type="submit" value={t('titleFormSignIn')} />
+            <input type="submit" className="globalBlueButton" value={t('titleFormSignIn')} />
           </>
         )}
       </form>

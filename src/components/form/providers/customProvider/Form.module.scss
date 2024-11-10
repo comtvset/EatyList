@@ -5,23 +5,7 @@
 }
 
 .container input[type='submit'] {
-  height: 40px;
-  padding: 0 40px;
-  background-color: #5496ec;
-  border-radius: 20px;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  border: none;
-  font-size: 1.2rem;
-  margin: 0 auto;
-  cursor: pointer;
-  transition: 0.4s ease;
-}
-
-.container input[type='submit']:hover {
-  transition: 0.3s ease;
-  background-color: #2277e7;
+  padding: 0 40px !important;
 }
 
 .container input {

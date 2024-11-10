@@ -1,4 +1,3 @@
-import styles from '@/components/form/getStarted/GetStarted.module.scss';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
@@ -7,7 +6,7 @@ export const GetStarted = () => {
 
   return (
     <>
-      <Link href={'signup'} className={styles.getStart}>
+      <Link href={'signup'} className="globalBlueButton">
         {t('getStart')}
       </Link>
     </>
