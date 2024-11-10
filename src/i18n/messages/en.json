@@ -15,7 +15,7 @@
     "or": "or",
     "continueWithGoogle": "Continue with Google",
     "continueWithFacebook": "Continue with Facebook",
-    "continueWithApple": "Continue with Apple",
+    "continueWithGitHub": "Continue with GitHub",
     "err_emailRequired": "email is required",
     "err_emailInvalid": "invalid email address",
     "err_emailConfirm": "please confirm email",
@@ -36,13 +36,17 @@
   "Errors": {
     "signout_err": "Error during sign out",
     "unknown_err": "Unknown error occurred",
-    "auth/email-already-in-use": "This email is already associated with an account.",
-    "auth/too-many-requests": "Too many requests. Please try again later.",
-    "auth/user-disabled": "This user account has been disabled by an administrator.",
+    "auth/email-already-in-use": "This email is already associated with an account",
+    "auth/too-many-requests": "Too many requests. Please try again later",
+    "auth/user-disabled": "This user account has been disabled by an administrator",
+    "auth/account-exists-with-different-credential": "An account already exists with a different sign-in method",
     "auth_success": "Authentication successful",
+    "auth/cancelled-popup-request": "The sign-in process was cancelled. Please try again",
+    "auth/popup-closed-by-user": "The sign-in popup was closed. Please try again.",
     "unknown_err_spec": "Unknown error occurred :(",
     "unknown_suc_spec": "Hurray! Unknown success :)",
     "showError": "Show error",
-    "showSuccess": "Show success"
+    "showSuccess": "Show success",
+    "noProvider": "Provider not found"
   }
 }
