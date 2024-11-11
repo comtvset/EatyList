@@ -7,6 +7,8 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { AuthProvider } from '@/contexts/authContext';
 import { cookies } from 'next/headers';
 import { AlertProvider } from '@/contexts/alertContext';
+import Head from 'next/head';
+
 const mainFont = Quicksand({ weight: '400', subsets: ['latin'], preload: false });
 
 export const metadata: Metadata = {
@@ -37,6 +39,11 @@ export default async function RootLayout({
           <AlertProvider>
             <AuthProvider initialToken={token}>
               <Header />
+              <Head>
+                <link rel="preload" href="/google.webp" as="image" />
+                <link rel="preload" href="/facebook.webp" as="image" />
+                <link rel="preload" href="/github.webp" as="image" />
+              </Head>
               {children}
             </AuthProvider>
           </AlertProvider>
