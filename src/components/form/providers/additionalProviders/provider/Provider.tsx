@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+// import Image from 'next/image';
 import styles from '@/components/form/providers/additionalProviders/provider/Provider.module.scss';
 import {
   GoogleAuthProvider,
@@ -122,7 +122,7 @@ export const Provider: React.FC<ProviderProps> = ({
       className={styles.container}
       onClick={handleClick}
     >
-      <Image
+      {/* <Image
         src={src}
         alt="img"
         width={100}
@@ -130,7 +130,10 @@ export const Provider: React.FC<ProviderProps> = ({
         style={{ borderRight: border }}
         className={styles.img}
         priority
-      />
+      /> */}
+
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt="img" style={{ borderRight: border }} className={styles.img} />
       <span className={styles.text}>{text}</span>
     </div>
   );
