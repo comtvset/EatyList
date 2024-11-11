@@ -41,6 +41,7 @@
     "auth/user-disabled": "This user account has been disabled by an administrator",
     "auth/account-exists-with-different-credential": "An account already exists with a different sign-in method",
     "auth_success": "Authentication successful",
+    "auth/invalid-credential": "Invalid credentials. Please try again",
     "auth/cancelled-popup-request": "The sign-in process was cancelled. Please try again",
     "auth/popup-closed-by-user": "The sign-in popup was closed. Please try again.",
     "unknown_err_spec": "Unknown error occurred :(",

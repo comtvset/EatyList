@@ -11,7 +11,7 @@ export const Providers: React.FC = () => {
     <>
       <div className={styles.container}>
         <Provider
-          src="/google.png"
+          src="/google.webp"
           text={t('continueWithGoogle')}
           textColor="white"
           backgroundColor="#5496ec"
@@ -19,7 +19,7 @@ export const Providers: React.FC = () => {
           borderRight="1px solid #5496ec"
         />
         <Provider
-          src="/facebook.png"
+          src="/facebook.webp"
           text={t('continueWithFacebook')}
           textColor="white"
           backgroundColor="#415a9a"
@@ -27,7 +27,7 @@ export const Providers: React.FC = () => {
           borderRight="1px solid #415a9a"
         />
         <Provider
-          src="/github.png"
+          src="/github.webp"
           text={t('continueWithGitHub')}
           textColor="white"
           backgroundColor="black"
