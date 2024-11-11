@@ -1,5 +1,3 @@
-'use client';
-
 import styles from '@/components/form/providers/additionalProviders/Providers.module.scss';
 import { Provider } from './provider/Provider';
 import { useTranslations } from 'next-intl';

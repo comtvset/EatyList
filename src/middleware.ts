@@ -30,7 +30,20 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/signin', req.url));
   }
 
-  return NextResponse.next();
+  const responseWithHeaders = NextResponse.next();
+
+  if (pathname === '/signin' || pathname === '/signup') {
+    responseWithHeaders.headers.set(
+      'Link',
+      [
+        '</google.webp>; rel=preload; as=image',
+        '</facebook.webp>; rel=preload; as=image',
+        '</github.webp>; rel=preload; as=image',
+      ].join(', '),
+    );
+  }
+
+  return responseWithHeaders;
 }
 
 export const config = {
