@@ -32,7 +32,7 @@ export async function middleware(req: NextRequest) {
 
   const responseWithHeaders = NextResponse.next();
 
-  if (pathname === '/signin' || pathname === '/signup') {
+  if (pathname === '/' || pathname === '/signin' || pathname === '/signup') {
     responseWithHeaders.headers.set(
       'Link',
       [
