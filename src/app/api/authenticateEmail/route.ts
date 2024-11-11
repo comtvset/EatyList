@@ -50,6 +50,6 @@ export async function POST(req: NextRequest) {
   } catch (err) {
     const errorCode = (err as { code: string }).code;
     const errorMessage = t_err[errorCode] || t_err['unknown_err'];
-    return NextResponse.json({ message: errorMessage, error: err });
+    return NextResponse.json({ message: errorMessage, redirectUrl: '/signup' });
   }
 }

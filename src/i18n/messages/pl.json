@@ -41,6 +41,7 @@
     "auth/user-disabled": "To konto użytkownika zostało dezaktywowane przez administratora",
     "auth/account-exists-with-different-credential": "Konto już istnieje z inną metodą logowania",
     "auth_success": "Logowanie zakończone sukcesem",
+    "auth/invalid-credential": "Nieprawidłowe dane uwierzytelniające. Spróbuj ponownie",
     "auth/cancelled-popup-request": "Proces logowania został anulowany. Spróbuj ponownie.",
     "auth/popup-closed-by-user": "Okno logowania zostało zamknięte przed zakończeniem. Spróbuj ponownie.",
     "unknown_err_spec": "Wystąpił nieznany błąd :(",

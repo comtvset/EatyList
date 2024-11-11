@@ -41,6 +41,7 @@
     "auth/user-disabled": "Esta cuenta de usuario ha sido deshabilitada por un administrador",
     "auth/account-exists-with-different-credential": "Ya existe una cuenta con un método de inicio de sesión diferente",
     "auth_success": "Autenticación exitosa",
+    "auth/invalid-credential": "Credenciales no válidas. Por favor, inténtalo de nuevo",
     "auth/cancelled-popup-request": "El proceso de inicio de sesión fue cancelado. Por favor, inténtalo de nuevo.",
     "auth/popup-closed-by-user": "El popup de inicio fue cerrado antes de completar el proceso. Intenta nuevamente.",
     "unknown_err_spec": "Ocurrió un error desconocido :(",

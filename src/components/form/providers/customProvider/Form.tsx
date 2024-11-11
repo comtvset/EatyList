@@ -7,10 +7,10 @@ import { schemaSignIn, schemaSignUp } from '@/hooks/schemas';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslations } from 'next-intl';
 import { useAuth } from '@/hooks/useAuth';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { AlertContext } from '@/contexts/alertContext';
-
 export const Form: React.FC = () => {
+  const [count, setCount] = useState(0);
   const t = useTranslations('Form');
   const t_err = useTranslations('Errors');
   const pathname = usePathname();
@@ -30,12 +30,18 @@ export const Form: React.FC = () => {
   });
 
   const onSubmit: SubmitHandler<FieldValues> = async (userData) => {
+    setCount((prev) => prev + 1);
     try {
       const response = await fetch('/api/authenticateEmail', {
         method: 'POST',
         body: JSON.stringify({ userData, pathname }),
       });
       const data = await response.json();
+
+      if (data.redirectUrl && count == 3) {
+        router.replace(data.redirectUrl);
+      }
+
       verify();
       if (data.status) {
         catchAlert({ type: 'successful', message: data.message });
