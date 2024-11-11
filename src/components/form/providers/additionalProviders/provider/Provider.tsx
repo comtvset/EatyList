@@ -125,8 +125,8 @@ export const Provider: React.FC<ProviderProps> = ({
       <Image
         src={src}
         alt="img"
-        width={30}
-        height={30}
+        width={100}
+        height={100}
         style={{ borderRight: border }}
         className={styles.img}
         priority
