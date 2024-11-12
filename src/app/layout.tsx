@@ -20,6 +20,10 @@ export const metadata: Metadata = {
       type: 'image/x-icon',
       url: '/favicon.ico',
     },
+    {
+      rel: 'preconnect',
+      url: '/_next/image',
+    },
   ],
 };
 
@@ -34,16 +38,14 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      <Head>
+        <link rel="preconnect" href="/_next/image" />
+      </Head>
       <body className={mainFont.className} style={{ fontSize: '1.2rem' }}>
         <NextIntlClientProvider messages={messages}>
           <AlertProvider>
             <AuthProvider initialToken={token}>
               <Header />
-              <Head>
-                <link rel="preload" href="/google.webp" as="image" />
-                <link rel="preload" href="/facebook.webp" as="image" />
-                <link rel="preload" href="/github.webp" as="image" />
-              </Head>
               {children}
             </AuthProvider>
           </AlertProvider>
