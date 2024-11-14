@@ -39,7 +39,8 @@
   display: inline-block;
   position: relative;
   box-sizing: border-box;
-  animation: rotation 2s linear infinite;
+  opacity: 0;
+  animation: rotation 2s linear infinite, fade-in 0.2s ease-in forwards;
 }
 
 @keyframes rotation {
@@ -49,5 +50,15 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
