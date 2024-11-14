@@ -12,7 +12,7 @@
 
 .img {
   padding: 10px;
-  background-color: white;
+  background-color: rgb(255 255 255);
   height: 40px;
   width: 40px;
 }
@@ -20,4 +20,45 @@
 .container:hover {
   filter: brightness(80%);
   transition: all 0.4s ease;
+}
+
+.spinnerContainer {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255 255 255);
+}
+
+.spinner {
+  width: 50%;
+  height: 50%;
+  border: 2px dotted #2a7dfa;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: rotation 2s linear infinite, fade-in 0.2s ease-in forwards;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,5 +1,3 @@
-'use client';
-
 import styles from '@/components/form/providers/additionalProviders/Providers.module.scss';
 import { Provider } from './provider/Provider';
 import { useTranslations } from 'next-intl';
@@ -16,7 +14,6 @@ export const Providers: React.FC = () => {
           textColor="white"
           backgroundColor="#5496ec"
           border="1px solid #5496ec"
-          borderRight="1px solid #5496ec"
         />
         <Provider
           src="/facebook.webp"
@@ -24,7 +21,6 @@ export const Providers: React.FC = () => {
           textColor="white"
           backgroundColor="#415a9a"
           border="1px solid #415a9a"
-          borderRight="1px solid #415a9a"
         />
         <Provider
           src="/github.webp"
@@ -32,7 +28,6 @@ export const Providers: React.FC = () => {
           textColor="white"
           backgroundColor="black"
           border="1px solid black"
-          borderRight="1px solid black"
         />
       </div>
     </>

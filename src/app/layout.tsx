@@ -7,6 +7,7 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { AuthProvider } from '@/contexts/authContext';
 import { cookies } from 'next/headers';
 import { AlertProvider } from '@/contexts/alertContext';
+
 const mainFont = Quicksand({ weight: '400', subsets: ['latin'], preload: false });
 
 export const metadata: Metadata = {
