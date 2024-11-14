@@ -7,7 +7,6 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { AuthProvider } from '@/contexts/authContext';
 import { cookies } from 'next/headers';
 import { AlertProvider } from '@/contexts/alertContext';
-import Head from 'next/head';
 
 const mainFont = Quicksand({ weight: '400', subsets: ['latin'], preload: false });
 
@@ -19,10 +18,6 @@ export const metadata: Metadata = {
       rel: 'icon',
       type: 'image/x-icon',
       url: '/favicon.ico',
-    },
-    {
-      rel: 'preconnect',
-      url: '/_next/image',
     },
   ],
 };
@@ -38,9 +33,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <Head>
-        <link rel="preconnect" href="/_next/image" />
-      </Head>
       <body className={mainFont.className} style={{ fontSize: '1.2rem' }}>
         <NextIntlClientProvider messages={messages}>
           <AlertProvider>

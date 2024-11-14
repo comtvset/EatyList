@@ -20,7 +20,6 @@ interface ProviderProps {
   textColor: string;
   backgroundColor: string;
   border: string;
-  borderRight: string;
 }
 
 export const Provider: React.FC<ProviderProps> = ({
@@ -31,6 +30,7 @@ export const Provider: React.FC<ProviderProps> = ({
   border,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const { verify } = useAuth();
   const { catchAlert } = useContext(AlertContext);
   const t_err = useTranslations('Errors');
@@ -122,16 +122,25 @@ export const Provider: React.FC<ProviderProps> = ({
       className={styles.container}
       onClick={handleClick}
     >
+      {!imageLoaded && (
+        <div className={styles.spinnerContainer}>
+          <div className={styles.spinner}></div>
+        </div>
+      )}
+
       <Image
         src={src}
         alt="img"
         width={100}
         height={100}
-        style={{ borderRight: border }}
+        style={{
+          display: imageLoaded ? 'block' : 'none',
+        }}
         className={styles.img}
-        placeholder="blur"
-        priority={true}
+        priority
+        onLoad={() => setImageLoaded(true)}
       />
+
       <span className={styles.text}>{text}</span>
     </div>
   );
