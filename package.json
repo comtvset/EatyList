@@ -22,7 +22,9 @@
     "lint": "next lint",
     "format:fix": "npx prettier . --cache --write src/**/*.*",
     "ci:format": "prettier . --check",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -37,7 +39,11 @@
     "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@jest/globals": "^29.7.0",
     "@svgr/webpack": "^8.1.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -47,10 +53,14 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-compiler": "^0.0.0-experimental-7c1344f-20241007",
     "husky": "^9.1.6",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "stylelint": "^16.9.0",
     "stylelint-config-standard-scss": "^13.1.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "5.5.3"
   }
 }
