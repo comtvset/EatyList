@@ -40,7 +40,9 @@
   position: relative;
   box-sizing: border-box;
   opacity: 0;
-  animation: rotation 2s linear infinite, fade-in 0.2s ease-in forwards;
+  animation:
+    rotation 2s linear infinite,
+    fade-in 0.2s ease-in forwards;
 }
 
 @keyframes rotation {
