@@ -65,7 +65,7 @@ export const Form: React.FC = () => {
 
   return (
     <>
-      <form className={styles.container} onSubmit={handleSubmit(onSubmit)}>
+      <form className={styles.container} role="form" onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="email" className={`${errors.email ? styles.error : ''}`}>
           {t('email')}*
         </label>
