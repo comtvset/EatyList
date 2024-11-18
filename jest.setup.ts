@@ -4,4 +4,7 @@ import '@testing-library/jest-dom/jest-globals';
 jest.mock('next/navigation', () => ({
   useRouter: jest.fn(),
   usePathname: jest.fn(),
+  useParams: jest.fn(),
 }));
+
+jest.mock('@/services/locale');

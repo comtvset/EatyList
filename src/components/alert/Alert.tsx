@@ -10,7 +10,11 @@ export const Alert = ({ status }: { status: AlertStatus }) => {
   const { type } = status;
 
   if (type && status.message) {
-    return <div className={`${styles.container} ${alertStyles[type]}`}>{status.message}</div>;
+    return (
+      <div className={`${styles.container} ${alertStyles[type]}`} role="alert">
+        {status.message}
+      </div>
+    );
   }
 
   return null;
