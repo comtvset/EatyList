@@ -7,7 +7,7 @@ export const Providers: React.FC = () => {
 
   return (
     <>
-      <div className={styles.container}>
+      <div role="providers" className={styles.container}>
         <Provider
           src="/google.webp"
           text={t('continueWithGoogle')}
