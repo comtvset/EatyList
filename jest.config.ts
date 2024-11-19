@@ -20,6 +20,9 @@ const config: Config = {
     '!**/src/i18n/**',
     '!**/src/hooks/schemas.ts',
   ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 };
 
 export default createJestConfig(config);
