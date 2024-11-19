@@ -45,7 +45,7 @@ export const Header: React.FC = () => {
 
   return (
     <header className={styles.container}>
-      <Link className={localFont.className} href={'/'} style={{ fontSize: '3.2rem' }}>
+      <Link className={localFont.className} href={'/'} style={{ fontSize: '3.2rem' }} role={'logo'}>
         EatyList
       </Link>
       <div className={styles.nav}>

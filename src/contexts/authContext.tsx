@@ -3,7 +3,7 @@ import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { AlertContext } from './alertContext';
 import { useTranslations } from 'next-intl';
 
-interface AuthContextProps {
+export interface AuthContextProps {
   verify: () => Promise<void>;
   isAuthenticated: boolean;
   setIsAuthenticated: (value: boolean) => void;
