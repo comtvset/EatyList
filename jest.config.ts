@@ -19,6 +19,7 @@ const config: Config = {
     '!**/*.d.ts',
     '!**/src/i18n/**',
     '!**/src/hooks/schemas.ts',
+    '!**/src/components/testComponent/showError.tsx',
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
