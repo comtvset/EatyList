@@ -35,3 +35,48 @@ a {
   transition: 0.4s ease;
   background-color: #2277e7;
 }
+
+.globalOrangeButton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f56d44;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0 20px;
+  height: 40px;
+  transition: 0.4s ease;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.globalOrangeButton:hover {
+  transition: 0.4s ease;
+  background-color: #f34814;
+}
+
+.globalOrangeButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+.globalOrangeButton span::before {
+  content: '\00ab';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: -20px;
+  transition: 0.4s ease;
+}
+
+.globalOrangeButton:hover span {
+  padding-left: 25px;
+}
+
+.globalOrangeButton:hover span::before {
+  opacity: 1;
+  left: 0;
+}

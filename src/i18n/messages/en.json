@@ -49,5 +49,12 @@
     "showError": "Show error",
     "showSuccess": "Show success",
     "noProvider": "Provider not found"
+  },
+  "NotFound/ErrorPages": {
+    "wrong": "Something went wrong!",
+    "tryAgain": "Try again",
+    "notFound": "Not Found: ",
+    "info": "Could not find requested resource",
+    "back": "Click to go back"
   }
 }

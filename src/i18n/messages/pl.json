@@ -49,5 +49,12 @@
     "showError": "Pokaż błąd",
     "showSuccess": "Pokaż sukces",
     "noProvider": "Dostawca nie znaleziony"
+  },
+  "NotFound/ErrorPages": {
+    "wrong": "Coś poszło nie tak!",
+    "tryAgain": "Spróbuj ponownie",
+    "notFound": "Nie znaleziono: ",
+    "info": "Nie udało się znaleźć żądanego zasobu",
+    "back": "Kliknij, aby wrócić"
   }
 }
