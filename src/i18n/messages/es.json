@@ -49,5 +49,12 @@
     "showError": "Mostrar error",
     "showSuccess": "Mostrar éxito",
     "noProvider": "Proveedor no encontrado"
+  },
+  "NotFound/ErrorPages": {
+    "wrong": "¡Algo salió mal!",
+    "tryAgain": "Intenta de nuevo",
+    "notFound": "No encontrado: ",
+    "info": "No se pudo encontrar el recurso solicitado",
+    "back": "Haz clic para regresar"
   }
 }
