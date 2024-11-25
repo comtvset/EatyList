@@ -18,7 +18,8 @@ const allowedPaths = [
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  const currentSegment = req.nextUrl.pathname.split('/').pop();
+  const segments = req.nextUrl.pathname.split('/').filter(Boolean);
+  const currentSegment = segments.pop();
 
   const apiUrl = `${req.nextUrl.origin}/api/verifyToken`;
   const response = await fetch(apiUrl, {
@@ -43,7 +44,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (currentSegment && !allowedPaths.includes(currentSegment)) {
-    return NextResponse.rewrite(new URL('/not-found', req.url));
+    return NextResponse.rewrite(new URL('/404', req.url));
   }
 
   return NextResponse.next();
