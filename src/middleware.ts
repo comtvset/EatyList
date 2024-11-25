@@ -44,7 +44,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (currentSegment && !allowedPaths.includes(currentSegment)) {
-    return NextResponse.rewrite(new URL('/404', req.url));
+    return NextResponse.rewrite(new URL('/not-found', req.url));
   }
 
   return NextResponse.next();
