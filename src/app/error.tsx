@@ -1,8 +1,8 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import styles from '@/app/page.module.css';
 import { useTranslations } from 'next-intl';
+import BackButton from '@/components/buttons/BackButton';
 
 export default function Error({
   reset,
@@ -10,7 +10,6 @@ export default function Error({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  const router = useRouter();
   const t = useTranslations('NotFound/ErrorPages');
 
   return (
@@ -19,18 +18,7 @@ export default function Error({
       <h2 style={{ margin: '20px' }}>{t('wrong')}</h2>
 
       <div>
-        <button
-          className="globalOrangeButton"
-          onClick={() => {
-            if (window.history.length > 1) {
-              router.back();
-            } else {
-              router.push('/');
-            }
-          }}
-        >
-          <span>{t('back')}</span>
-        </button>
+        <BackButton />
         <button className="globalOrangeButton" onClick={() => reset()}>
           {t('tryAgain')}
         </button>

@@ -1,0 +1,39 @@
+.superEllipse {
+  background-color: var(--bg-color, #6b6b6b);
+  border-radius: 20%;
+  height: 130px;
+  position: relative;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin: 5px;
+  cursor: pointer;
+  transition: 0.4s ease;
+  user-select: none;
+}
+
+.superEllipse:hover {
+  transition: 0.4s ease;
+  filter: brightness(0.9);
+}
+
+.superEllipse::before,
+.superEllipse::after {
+  background-color: var(--bg-color, #6b6b6b);
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+
+.superEllipse::before {
+  border-radius: 1.5% / 30%;
+  inset: 20px -1px;
+}
+
+.superEllipse::after {
+  border-radius: 30% / 1.5%;
+  inset: -1px 20px;
+}

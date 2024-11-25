@@ -8,6 +8,7 @@
   align-items: center;
   background-color: #fff;
   border-bottom: 1px solid rgb(189 189 189 / 40.4%);
+  user-select: none;
 }
 
 .nav {
@@ -16,7 +17,7 @@
   align-items: center;
 }
 
-.container > a:hover,
+.nav > a:hover,
 .signIn:hover {
   color: #4e4e4ed5;
   transition: 0.4s ease;

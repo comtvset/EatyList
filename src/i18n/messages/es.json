@@ -31,7 +31,14 @@
     "err_passwordMatch": "las contraseñas deben coincidir"
   },
   "MainPage": {
-    "title": "Pagina principal"
+    "pasta": "pasta",
+    "potato": "patata",
+    "rice": "arroz",
+    "meat": "carne",
+    "fish": "pescado",
+    "potatoPancakes": "tortitas de patata",
+    "salad": "ensalada",
+    "soup": "sopa"
   },
   "Errors": {
     "signout_err": "Error durante la desconexión",
