@@ -1,8 +1,23 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 
+const allow = [
+  'pasta',
+  'potato',
+  'rice',
+  'meat',
+  'fish',
+  'salad',
+  'soup',
+  'main',
+  'signin',
+  'signup',
+];
+
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+
+  const current = req.nextUrl.pathname.split('/').pop();
 
   const apiUrl = `${req.nextUrl.origin}/api/verifyToken`;
   const response = await fetch(apiUrl, {
@@ -18,11 +33,7 @@ export async function middleware(req: NextRequest) {
 
   const result = await response.json();
 
-  if (
-    (result.token && pathname === '/') ||
-    (result.token && pathname === '/signin') ||
-    (result.token && pathname === '/signup')
-  ) {
+  if (result.token && ['/', '/signin', '/signup'].includes(pathname)) {
     return NextResponse.redirect(new URL('/main', req.url));
   }
 
@@ -30,9 +41,13 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/signin', req.url));
   }
 
+  if (current && !allow.includes(current)) {
+    return NextResponse.redirect(new URL('/not-found', req.url));
+  }
+
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ['/main', '/', '/signin', '/signup'],
+  matcher: ['/main/:path*', '/', '/signin', '/signup'],
 };
