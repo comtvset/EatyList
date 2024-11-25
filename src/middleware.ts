@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 
-const allow = [
+const allowedPaths = [
   'pasta',
   'potato',
   'rice',
   'meat',
   'fish',
+  'potatopancakes',
   'salad',
   'soup',
   'main',
@@ -17,7 +18,7 @@ const allow = [
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  const current = req.nextUrl.pathname.split('/').pop();
+  const currentSegment = req.nextUrl.pathname.split('/').pop();
 
   const apiUrl = `${req.nextUrl.origin}/api/verifyToken`;
   const response = await fetch(apiUrl, {
@@ -41,8 +42,8 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/signin', req.url));
   }
 
-  if (current && !allow.includes(current)) {
-    return NextResponse.redirect(new URL('/not-found', req.url));
+  if (currentSegment && !allowedPaths.includes(currentSegment)) {
+    return NextResponse.rewrite(new URL('/not-found', req.url));
   }
 
   return NextResponse.next();
