@@ -18,8 +18,7 @@ const allowedPaths = [
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  const segments = req.nextUrl.pathname.split('/').filter(Boolean);
-  const currentSegment = segments.pop();
+  const currentSegment = req.nextUrl.pathname.split('/').pop();
 
   const apiUrl = `${req.nextUrl.origin}/api/verifyToken`;
   const response = await fetch(apiUrl, {
@@ -39,7 +38,7 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect(new URL('/main', req.url));
   }
 
-  if (!result.token && pathname === '/main') {
+  if (!result.token && pathname.startsWith('/main')) {
     return NextResponse.redirect(new URL('/signin', req.url));
   }
 
