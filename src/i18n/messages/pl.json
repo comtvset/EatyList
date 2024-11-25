@@ -31,7 +31,14 @@
     "err_passwordMatch": "hasła muszą się zgadzać"
   },
   "MainPage": {
-    "title": "Strona główna"
+    "pasta": "makaron",
+    "potato": "ziemniak",
+    "rice": "ryż",
+    "meat": "mięso",
+    "fish": "ryba",
+    "potatoPancakes": "placki ziemniaczane",
+    "salad": "sałatka",
+    "soup": "zupa"
   },
   "Errors": {
     "signout_err": "Błąd podczas wylogowywania",

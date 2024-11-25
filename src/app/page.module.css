@@ -18,6 +18,14 @@
   align-items: center;
 }
 
+.categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
 @media (width <= 850px) {
   .providersContainer {
     flex-direction: column;

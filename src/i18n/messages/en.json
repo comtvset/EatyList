@@ -31,7 +31,14 @@
     "err_passwordMatch": "passwords must match"
   },
   "MainPage": {
-    "title": "Main Page"
+    "pasta": "pasta",
+    "potato": "potato",
+    "rice": "rice",
+    "meat": "meat",
+    "fish": "fish",
+    "potatoPancakes": "potato pancakes",
+    "salad": "salad",
+    "soup": "soup"
   },
   "Errors": {
     "signout_err": "Error during sign out",
