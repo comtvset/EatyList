@@ -8,11 +8,12 @@ import {
   GithubAuthProvider,
   signInWithPopup,
 } from 'firebase/auth';
-import { auth } from '@/firebase';
+import { auth, db } from '@/firebase';
 import { useAuth } from '@/hooks/useAuth';
 import { AlertContext } from '@/contexts/alertContext';
 import { useContext, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { ref, set, update, get } from 'firebase/database';
 
 interface ProviderProps {
   src: string;
@@ -81,6 +82,22 @@ export const Provider: React.FC<ProviderProps> = ({
 
         if (data.message) {
           catchAlert({ type: 'successful', message: data.message });
+
+          const userRef = ref(db, `users/${user.uid}`);
+          const snapshot = await get(userRef);
+
+          if (snapshot.exists()) {
+            await update(ref(db, 'users/' + user.uid), {
+              lastSignInTime: user.metadata.lastSignInTime,
+            });
+          } else {
+            await set(userRef, {
+              name: user.displayName,
+              email: user.email,
+              creationTime: user.metadata.creationTime,
+              lastSignInTime: user.metadata.lastSignInTime,
+            });
+          }
         } else {
           catchAlert({ type: 'error', message: data.message });
         }

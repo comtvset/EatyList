@@ -66,6 +66,26 @@ export const Form: React.FC = () => {
   return (
     <>
       <form className={styles.container} role="form" onSubmit={handleSubmit(onSubmit)}>
+        {pathname === '/signup' && schemaSignUp(t) && (
+          <>
+            <label htmlFor="name" className={`${errors.name ? styles.error : ''}`}>
+              {t('name')}*
+            </label>
+            <input
+              {...register('name')}
+              id="name"
+              className={errors.name ? styles.errorBorder : ''}
+            />
+            <div className={styles.errorContener}>
+              <p
+                className={`${styles.errorMassage} ${errors.name ? styles.visible : styles.hidden}`}
+              >
+                {errors.name?.message}
+              </p>
+            </div>
+          </>
+        )}
+
         <label htmlFor="email" className={`${errors.email ? styles.error : ''}`}>
           {t('email')}*
         </label>

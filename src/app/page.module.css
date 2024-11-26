@@ -26,8 +26,39 @@
   width: 100%;
 }
 
+.user {
+  margin: 5px 10px;
+  user-select: none;
+  opacity: 0;
+  animation: fade-in 0.5s ease-out forwards;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notFoundTitle {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
 @media (width <= 850px) {
   .providersContainer {
     flex-direction: column;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

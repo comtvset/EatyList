@@ -11,7 +11,7 @@ export default function NotFound() {
 
   return (
     <aside className={styles.main}>
-      <h2>
+      <h2 className={styles.notFoundTitle}>
         {t('notFound')} {pathname}
       </h2>
       <p style={{ margin: '20px' }}>{t('info')}</p>

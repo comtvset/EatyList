@@ -7,6 +7,7 @@ export interface AuthContextProps {
   verify: () => Promise<void>;
   isAuthenticated: boolean;
   setIsAuthenticated: (value: boolean) => void;
+  user: string;
 }
 
 interface AuthProviderProps {
@@ -18,6 +19,7 @@ export const AuthContext = createContext<AuthContextProps | undefined>(undefined
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children, initialToken }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(Boolean(initialToken));
+  const [user, setUser] = useState('');
   const { catchAlert } = useContext(AlertContext);
   const t = useTranslations('Errors');
 
@@ -32,6 +34,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children, initialTok
 
       if (data.token) {
         setIsAuthenticated(true);
+        setUser(data.user);
       } else {
         setIsAuthenticated(false);
       }
@@ -46,7 +49,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children, initialTok
   };
 
   return (
-    <AuthContext.Provider value={{ verify, isAuthenticated, setIsAuthenticated }}>
+    <AuthContext.Provider value={{ verify, isAuthenticated, setIsAuthenticated, user }}>
       {children}
     </AuthContext.Provider>
   );

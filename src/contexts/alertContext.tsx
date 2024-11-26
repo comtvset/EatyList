@@ -23,7 +23,7 @@ export const AlertProvider = ({ children }: { children: ReactNode }) => {
     setStatus(status);
     timeoutRef.current = setTimeout(() => {
       setStatus({ type: null, message: null });
-    }, 2500);
+    }, 3500);
   };
 
   return (
