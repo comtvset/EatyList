@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '@/firebase';
+import { auth, db } from '@/firebase';
+import { ref, set, update } from 'firebase/database';
 
 const loadTranslations = async (lang: string) => {
   try {
@@ -25,6 +26,10 @@ export async function POST(req: NextRequest) {
         data.userData.email,
         data.userData.password,
       );
+
+      await update(ref(db, 'users/' + userCredential.user.uid), {
+        lastSignInTime: userCredential.user.metadata.lastSignInTime,
+      });
     }
     if (data.pathname === '/signup') {
       userCredential = await createUserWithEmailAndPassword(
@@ -32,12 +37,19 @@ export async function POST(req: NextRequest) {
         data.userData.email,
         data.userData.password,
       );
+
+      set(ref(db, 'users/' + userCredential.user.uid), {
+        name: data.userData.name,
+        email: userCredential.user.email,
+        creationTime: userCredential.user.metadata.creationTime,
+        lastSignInTime: userCredential.user.metadata.lastSignInTime,
+      });
     }
     if (userCredential) {
       const user = userCredential.user;
       const accessToken = await user.getIdToken();
-
       const response = NextResponse.json({ status: 200, message: t_err['auth_success'] });
+
       response.cookies.set('JWT', accessToken, {
         maxAge: 3600,
         httpOnly: true,
@@ -49,6 +61,7 @@ export async function POST(req: NextRequest) {
     }
   } catch (err) {
     const errorCode = (err as { code: string }).code;
+
     const errorMessage = t_err[errorCode] || t_err['unknown_err'];
     return NextResponse.json({ message: errorMessage, redirectUrl: '/signup' });
   }

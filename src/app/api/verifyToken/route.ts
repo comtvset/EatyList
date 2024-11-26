@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { admin } from '@/utils/firebaseAdmin';
+import { db } from '@/firebase';
+import { get, ref } from 'firebase/database';
 
 const loadTranslations = async (lang: string) => {
   try {
@@ -21,7 +23,13 @@ export async function POST(req: NextRequest) {
     }
 
     const decodedToken = await admin.auth().verifyIdToken(token);
-    return NextResponse.json({ token: decodedToken.uid });
+    const uid = decodedToken.uid;
+
+    const userRef = ref(db, `users/${uid}`);
+    const snapshot = await get(userRef);
+    const userData = snapshot.val();
+
+    return NextResponse.json({ token: decodedToken.uid, user: userData.name });
   } catch (err) {
     const errorMessage = err instanceof Error ? err.message : t_err.unknown_err;
     return NextResponse.json({ token: null, error: errorMessage });

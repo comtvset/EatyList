@@ -2,6 +2,11 @@ import * as yup from 'yup';
 
 export const schemaSignUp = (t: (key: string) => string) =>
   yup.object().shape({
+    name: yup
+      .string()
+      .required(t('name_required'))
+      .min(2, t('name_tooShort'))
+      .max(50, t('name_tooLong')),
     email: yup
       .string()
       .required(t('err_emailRequired'))
@@ -28,6 +33,7 @@ export const schemaSignUp = (t: (key: string) => string) =>
 
 export const schemaSignIn = (t: (key: string) => string) =>
   yup.object().shape({
+    name: yup.string().nullable(),
     email: yup
       .string()
       .required(t('err_emailRequired'))

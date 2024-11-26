@@ -8,6 +8,7 @@
   "Form": {
     "titleFormSignIn": "Zaloguj się",
     "titleFormSignUp": "Zarejestruj się",
+    "name": "Imię",
     "email": "Email",
     "confirmEmail": "Potwierdż email",
     "password": "Wybierz hasło",
@@ -16,6 +17,9 @@
     "continueWithGoogle": "Kontynuuj z Google",
     "continueWithFacebook": "Kontynuuj z Facebook",
     "continueWithGitHub": "Kontynuuj z GitHub",
+    "name_required": "Imię jest wymagane",
+    "name_tooShort": "Imię jest za krótkie",
+    "name_tooLong": "imię jest za długie",
     "err_emailRequired": "email jest wymagany",
     "err_emailInvalid": "nieprawidłowy adres email",
     "err_emailConfirm": "proszę potwierdzić email",
