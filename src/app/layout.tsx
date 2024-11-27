@@ -37,8 +37,10 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <AlertProvider>
             <AuthProvider initialToken={token}>
-              <Header />
-              {children}
+              <div className="wrapper">
+                <Header />
+                {children}
+              </div>
             </AuthProvider>
           </AlertProvider>
         </NextIntlClientProvider>

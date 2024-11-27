@@ -7,7 +7,7 @@ import { GetStarted } from '../form/getStarted/GetStarted';
 import { LangSelection } from '../langSelection/LangSelection';
 import { useTranslations } from 'next-intl';
 import { useAuth } from '@/hooks/useAuth';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { removeToken } from '@/services/removeToken';
 import { AlertContext } from '@/contexts/alertContext';
 import { signOut } from 'firebase/auth';
@@ -19,6 +19,7 @@ const localFont = Gochi_Hand({
 });
 
 export const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations('HomePage');
   const t_err = useTranslations('Errors');
 
@@ -39,27 +40,52 @@ export const Header: React.FC = () => {
     setIsAuthenticated(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   useEffect(() => {
     verify();
   }, [verify]);
 
   return (
     <header className={styles.container}>
-      <Link className={localFont.className} href={'/'} style={{ fontSize: '3.2rem' }} role={'logo'}>
+      <Link
+        className={localFont.className}
+        href={'/'}
+        style={{ fontSize: '3.2rem' }}
+        role={'logo'}
+        onClick={closeMenu}
+      >
         EatyList
       </Link>
-      <div className={styles.nav}>
+
+      <div className={styles.burger} onClick={toggleMenu}>
+        <span className={isMenuOpen ? styles.burgerOpen : ''}></span>
+        <span className={isMenuOpen ? styles.burgerOpen : ''}></span>
+        <span className={isMenuOpen ? styles.burgerOpen : ''}></span>
+      </div>
+
+      <div className={`${styles.nav} ${isMenuOpen ? styles.menuOpen : ''}`}>
         <LangSelection />
         {isAuthenticated ? (
-          <Link href={'/'} className="globalBlueButton" onClick={handleSignOut}>
+          <Link
+            href={'/'}
+            className={`globalBlueButton ${isMenuOpen ? 'globalBlueButtonBurger' : ''}`}
+            onClick={handleSignOut}
+          >
             {t('signout')}
           </Link>
         ) : (
           <>
-            <Link href={'signin'} className={styles.signIn}>
+            <Link href={'signin'} className={styles.signIn} onClick={closeMenu}>
               {t('signin')}
             </Link>
-            <GetStarted />
+            <GetStarted closeMenu={closeMenu} isMenuOpen={isMenuOpen} />
           </>
         )}
       </div>
