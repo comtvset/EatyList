@@ -124,3 +124,16 @@
     display: none;
   }
 }
+
+@media (hover: none) {
+  .burger:hover {
+    span {
+      background-color: #a5a5a5;
+    }
+
+    .burgerOpen:nth-child(1),
+    .burgerOpen:nth-child(3) {
+      background-color: #a5a5a5;
+    }
+  }
+}

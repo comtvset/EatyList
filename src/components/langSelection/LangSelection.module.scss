@@ -6,6 +6,15 @@
   background-color: white;
   transition: 0.4s ease;
   cursor: pointer;
+  padding: 5px 10px;
+  appearance: none;
+  appearance: none;
+  appearance: none;
+}
+
+.selectContainer select option {
+  font-family: Quicksand, sans-serif;
+  font-size: 1.2rem;
 }
 
 .selectContainer select:hover {
