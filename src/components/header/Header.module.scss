@@ -9,6 +9,7 @@
   background-color: #fff;
   border-bottom: 1px solid rgb(189 189 189 / 40.4%);
   user-select: none;
+  z-index: 2;
 }
 
 .nav {
@@ -21,4 +22,118 @@
 .signIn:hover {
   color: #4e4e4ed5;
   transition: 0.4s ease;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.burger span {
+  display: block;
+  height: 3px;
+  background-color: #a5a5a5;
+  transition: all 0.4s ease;
+}
+
+.burgerOpen {
+  background-color: transparent;
+}
+
+.burgerOpen:nth-child(1) {
+  transform: rotate(45deg);
+  position: relative;
+  top: 9px;
+}
+
+.burgerOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.burgerOpen:nth-child(3) {
+  transform: rotate(-45deg);
+  position: relative;
+  top: -7px;
+}
+
+.burger:hover {
+  span {
+    background-color: #5496ec;
+  }
+
+  .burgerOpen:nth-child(1),
+  .burgerOpen:nth-child(3) {
+    background-color: #5496ec;
+  }
+}
+
+.menuOpen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding-bottom: 0;
+  z-index: 2;
+}
+
+@media (width <=650px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+  }
+
+  .menuOpen {
+    display: flex;
+    padding-bottom: 45px;
+    background-color: rgb(255 255 255);
+    flex-direction: column-reverse;
+  }
+
+  .signIn {
+    font-size: 30px;
+  }
+}
+
+@media (width >=651px) {
+  .nav {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+  }
+
+  .menuOpen {
+    animation: none;
+  }
+
+  .burger {
+    display: none;
+  }
+}
+
+@media (hover: none) {
+  .burger:hover {
+    span {
+      background-color: #a5a5a5;
+    }
+
+    .burgerOpen:nth-child(1),
+    .burgerOpen:nth-child(3) {
+      background-color: #a5a5a5;
+    }
+  }
 }
