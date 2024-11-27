@@ -1,15 +1,32 @@
-.selectContainer select {
-  border: none;
-  font-size: 1.2rem;
-  font-family: inherit;
-  outline: none;
-  background-color: white;
-  transition: 0.4s ease;
-  cursor: pointer;
-  padding: 5px 10px;
-  appearance: none;
-  appearance: none;
-  appearance: none;
+.selectContainer {
+  position: relative;
+  display: inline-flex;
+
+  select {
+    border: none;
+    font-size: 1.2rem;
+    font-family: inherit;
+    outline: none;
+    background-color: white;
+    transition: 0.4s ease;
+    cursor: pointer;
+    padding: 5px 10px;
+    appearance: none;
+    appearance: none;
+    appearance: none;
+    padding-right: calc(1em + 10px);
+  }
+
+  &::after {
+    content: 'ᨆ';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: #4e4e4ed5;
+    pointer-events: none;
+  }
 }
 
 .selectContainer select option {
