@@ -8,6 +8,8 @@
   "Form": {
     "titleFormSignIn": "Inicia sesión",
     "titleFormSignUp": "Regístrate",
+    "haveAccount?": "¿Ya tienes una cuenta?",
+    "doNotHaveAccount?": "¿Aún no tienes una cuenta?",
     "name": "Nombre",
     "email": "Email",
     "confirmEmail": "Confirma tu email",

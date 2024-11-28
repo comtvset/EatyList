@@ -15,6 +15,7 @@
   opacity: 0;
   transform: translateX(100px);
   animation: fade-in 3s forwards;
+  z-index: 5;
 }
 
 .error {
