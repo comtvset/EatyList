@@ -1,4 +1,19 @@
+.formHeaderContainer {
+  margin: 2rem;
+  text-align: center;
+}
+
 .header {
   font-size: 3rem;
-  margin: 3rem;
+  margin: 2rem;
+}
+
+.link {
+  transition: 0.4s ease;
+  color: #2277e7;
+}
+
+.link:hover {
+  transition: 0.4s ease;
+  color: #5496ec;
 }
