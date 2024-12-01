@@ -7,6 +7,8 @@ import { getLocale, getMessages } from 'next-intl/server';
 import { AuthProvider } from '@/contexts/authContext';
 import { cookies } from 'next/headers';
 import { AlertProvider } from '@/contexts/alertContext';
+import { Suspense } from 'react';
+import Loading from './loading';
 
 const mainFont = Quicksand({ weight: '400', subsets: ['latin'], preload: false });
 
@@ -39,7 +41,7 @@ export default async function RootLayout({
             <AuthProvider initialToken={token}>
               <div className="wrapper">
                 <Header />
-                {children}
+                <Suspense fallback={<Loading />}>{children}</Suspense>
               </div>
             </AuthProvider>
           </AlertProvider>
