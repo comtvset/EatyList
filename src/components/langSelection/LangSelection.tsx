@@ -12,9 +12,15 @@ export const LangSelection = () => {
   const [isPending, startTransition] = useTransition();
 
   const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log('Selected language:', event.target.value);
     setLanguage(event.target.value);
     startTransition(() => {
-      setUserLocale(event.target.value as Locale);
+      try {
+        console.log('Setting user locale to', event.target.value);
+        setUserLocale(event.target.value as Locale);
+      } catch (error) {
+        console.error('Error setting user locale:', error);
+      }
     });
   };
 
