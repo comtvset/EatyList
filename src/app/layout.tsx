@@ -33,6 +33,9 @@ export default async function RootLayout({
   const messages = await getMessages();
   const token = cookies().get('JWT')?.value || null;
 
+  console.log(locale);
+  console.log(messages);
+
   return (
     <html lang={locale}>
       <body className={mainFont.className} style={{ fontSize: '1.2rem' }}>
