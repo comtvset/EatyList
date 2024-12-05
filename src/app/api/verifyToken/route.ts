@@ -16,6 +16,8 @@ export async function POST(req: NextRequest) {
   const translations = await loadTranslations(lang);
   const t_err = translations.Errors;
 
+  console.log(lang);
+
   try {
     const token = req.cookies.get('JWT')?.value;
     if (!token) {
@@ -31,6 +33,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ token: decodedToken.uid, user: userData.name });
   } catch (err) {
+    console.error('Error in POST:', err);
     const errorMessage = err instanceof Error ? err.message : t_err.unknown_err;
     return NextResponse.json({ token: null, error: errorMessage });
   }
