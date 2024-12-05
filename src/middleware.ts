@@ -34,6 +34,15 @@ export async function middleware(req: NextRequest) {
 
   const result = await response.json();
 
+  const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value;
+  const preferredLocale = req.nextUrl.searchParams.get('locale');
+
+  if (preferredLocale && preferredLocale !== cookieLocale) {
+    const updatedResponse = NextResponse.redirect(req.url);
+    updatedResponse.cookies.set('NEXT_LOCALE', preferredLocale);
+    return updatedResponse;
+  }
+
   if (result.token && ['/', '/signin', '/signup'].includes(pathname)) {
     return NextResponse.redirect(new URL('/main', req.url));
   }
