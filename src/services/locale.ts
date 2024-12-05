@@ -12,4 +12,5 @@ export async function getUserLocale() {
 
 export async function setUserLocale(locale: Locale) {
   cookies().set(COOKIE_NAME, locale);
+  console.log('User locale set to:', locale);
 }

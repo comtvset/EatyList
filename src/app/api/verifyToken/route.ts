@@ -13,6 +13,7 @@ const loadTranslations = async (lang: string) => {
 
 export async function POST(req: NextRequest) {
   const lang = req.cookies.get('NEXT_LOCALE')?.value || 'en';
+  console.log('Locale from cookies:', lang);
   const translations = await loadTranslations(lang);
   const t_err = translations.Errors;
 
