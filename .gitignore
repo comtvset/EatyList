@@ -37,4 +37,4 @@ yarn-error.log*
 next-env.d.ts
 
 # do not track package-lock.json file
-package-lock.json.env
+package-lock.json

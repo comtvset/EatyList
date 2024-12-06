@@ -3,8 +3,14 @@ import styles from '../../page.module.css';
 import { Suspense } from 'react';
 import Loading from '@/app/loading';
 
-export default function Page({ params }: { params: { category: string } }) {
-  const { category } = params;
+interface PageProps {
+  params: Promise<{
+    category: string;
+  }>;
+}
+
+export default async function Page({ params }: PageProps) {
+  const { category } = await params;
 
   return (
     <>
