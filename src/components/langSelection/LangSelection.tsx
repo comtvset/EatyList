@@ -1,7 +1,7 @@
 'use client';
 
 import styles from '@/components/langSelection/LangSelection.module.scss';
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import { Locale } from '@/i18n/config';
 import { setUserLocale } from '@/services/locale';
 import { useLocale } from 'next-intl';
@@ -9,21 +9,13 @@ import { useLocale } from 'next-intl';
 export const LangSelection = () => {
   const currentLocale = useLocale();
   const [language, setLanguage] = useState(currentLocale);
-  const [isPending, setIsPending] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
-  const handleSelect = async (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedLocale = event.target.value as Locale;
-
-    setLanguage(selectedLocale);
-    setIsPending(true);
-
-    try {
-      await setUserLocale(selectedLocale);
-    } catch (error) {
-      console.error('Error updating locale:', error);
-    } finally {
-      setIsPending(false);
-    }
+  const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setLanguage(event.target.value);
+    startTransition(() => {
+      setUserLocale(event.target.value as Locale);
+    });
   };
 
   return (

@@ -6,8 +6,11 @@ const withNextIntl = createNextIntlPlugin();
 const nextConfig = {
   experimental: {
     serverActions: {
-      allowedOrigins: ['deploy-preview-22--eatylist.netlify.app'],
+      allowedOrigins: ['eatylist.netlify.app'],
     },
+  },
+  sassOptions: {
+    silenceDeprecations: ['legacy-js-api'],
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));
