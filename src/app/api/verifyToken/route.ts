@@ -13,7 +13,6 @@ const loadTranslations = async (lang: string) => {
 
 export async function POST(req: NextRequest) {
   const lang = req.cookies.get('NEXT_LOCALE')?.value || 'en';
-  console.log('Locale from cookies:', lang);
   const translations = await loadTranslations(lang);
   const t_err = translations.Errors;
 
@@ -32,7 +31,6 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ token: decodedToken.uid, user: userData.name });
   } catch (err) {
-    console.error('Error in POST:', err);
     const errorMessage = err instanceof Error ? err.message : t_err.unknown_err;
     return NextResponse.json({ token: null, error: errorMessage });
   }

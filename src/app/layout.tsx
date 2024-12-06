@@ -31,7 +31,7 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
-  const token = cookies().get('JWT')?.value || null;
+  const token = (await cookies()).get('JWT')?.value || null;
 
   return (
     <html lang={locale}>
