@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Eatylist
 
-## Getting Started
+This is a web application for meal planning and grocery shopping. The app includes categories (for example: meat dishes, fish dishes, salads, etc.) and each category contains specific dishes.
+Users can select the dishes they want to cook and receives a list of ingredients needed for shopping. This way, they can plan their meals for the week and buy everything in advance.
 
-First, run the development server:
+## Goals
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. To practice and test acquired web development skills.
+2. To create a convenient tool for meal planning and grocery shopping.
+3. To improve the user experience when selecting dishes and making a shopping list.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Welcome page
+- Login and Registration pages
+- Main page
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technology stack
+- HTML
+- CSS
+- SCSS
+- TypeScript
+- React
+- Next.js
+- Jest
+- ESLint
+- Firebase
+- Jira
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Live Demo: [eatylist](https://eatylist.netlify.app/)
